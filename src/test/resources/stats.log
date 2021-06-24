@@ -1,0 +1,84 @@
+------------------------------------------------------------------------------------
+Date: 12/16/2020 -- 20:25:04 (uptime: 0d, 00h 00m 15s)
+------------------------------------------------------------------------------------
+Counter                                       | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                        | Total                     | 36
+decoder.pkts                                  | Total                     | 37
+decoder.bytes                                 | Total                     | 3386
+decoder.ipv4                                  | Total                     | 35
+decoder.ethernet                              | Total                     | 37
+decoder.tcp                                   | Total                     | 35
+decoder.avg_pkt_size                          | Total                     | 91
+decoder.max_pkt_size                          | Total                     | 182
+flow.tcp                                      | Total                     | 1
+flow.wrk.spare_sync_avg                       | Total                     | 100
+flow.wrk.spare_sync                           | Total                     | 1
+flow.mgr.full_hash_pass                       | Total                     | 1
+flow.spare                                    | Total                     | 9900
+tcp.memuse                                    | Total                     | 2293760
+tcp.reassembly_memuse                         | Total                     | 393216
+flow.memuse                                   | Total                     | 7394304
+------------------------------------------------------------------------------------
+Date: 12/16/2020 -- 20:25:12 (uptime: 0d, 00h 00m 23s)
+------------------------------------------------------------------------------------
+Counter                                       | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                        | Total                     | 48
+decoder.pkts                                  | Total                     | 68
+decoder.bytes                                 | Total                     | 6562
+decoder.ipv4                                  | Total                     | 59
+decoder.ethernet                              | Total                     | 68
+decoder.tcp                                   | Total                     | 57
+decoder.udp                                   | Total                     | 2
+decoder.avg_pkt_size                          | Total                     | 96
+decoder.max_pkt_size                          | Total                     | 361
+flow.tcp                                      | Total                     | 2
+flow.udp                                      | Total                     | 1
+flow.wrk.spare_sync_avg                       | Total                     | 100
+flow.wrk.spare_sync                           | Total                     | 2
+tcp.sessions                                  | Total                     | 1
+tcp.syn                                       | Total                     | 1
+tcp.synack                                    | Total                     | 1
+detect.alert                                  | Total                     | 2
+app_layer.flow.http                           | Total                     | 1
+app_layer.tx.http                             | Total                     | 1
+app_layer.flow.dns_udp                        | Total                     | 1
+app_layer.tx.dns_udp                          | Total                     | 2
+flow.mgr.full_hash_pass                       | Total                     | 1
+flow.spare                                    | Total                     | 9900
+tcp.memuse                                    | Total                     | 2293760
+tcp.reassembly_memuse                         | Total                     | 397312
+http.memuse                                   | Total                     | 96
+flow.memuse                                   | Total                     | 7394304
+------------------------------------------------------------------------------------
+Date: 12/16/2020 -- 20:25:15 (uptime: 0d, 00h 00m 26s)
+------------------------------------------------------------------------------------
+Counter                                       | TM Name                   | Value
+------------------------------------------------------------------------------------
+capture.kernel_packets                        | Total                     | 99
+decoder.pkts                                  | Total                     | 99
+decoder.bytes                                 | Total                     | 9720
+decoder.ipv4                                  | Total                     | 88
+decoder.ethernet                              | Total                     | 99
+decoder.tcp                                   | Total                     | 86
+decoder.udp                                   | Total                     | 2
+decoder.avg_pkt_size                          | Total                     | 98
+decoder.max_pkt_size                          | Total                     | 361
+flow.tcp                                      | Total                     | 2
+flow.udp                                      | Total                     | 1
+flow.wrk.spare_sync_avg                       | Total                     | 100
+flow.wrk.spare_sync                           | Total                     | 2
+tcp.sessions                                  | Total                     | 1
+tcp.syn                                       | Total                     | 1
+tcp.synack                                    | Total                     | 1
+detect.alert                                  | Total                     | 2
+app_layer.flow.http                           | Total                     | 1
+app_layer.tx.http                             | Total                     | 1
+app_layer.flow.dns_udp                        | Total                     | 1
+app_layer.tx.dns_udp                          | Total                     | 2
+flow.mgr.full_hash_pass                       | Total                     | 1
+flow.spare                                    | Total                     | 9800
+tcp.memuse                                    | Total                     | 2293760
+tcp.reassembly_memuse                         | Total                     | 393216
+flow.memuse                                   | Total                     | 7394304

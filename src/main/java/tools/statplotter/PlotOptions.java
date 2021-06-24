@@ -1,14 +1,18 @@
 package tools.statplotter;
 
+import java.util.TimeZone;
+
 public class PlotOptions {
     private boolean enableLogScale;
     private int logScale;
     private String dateformat;
+    private TimeZone timeZone;
 
     public void setDefaults(){
         enableLogScale = false;
         logScale = 10;
-        dateformat = "dd/MM/yyyy HH:mm:ss";
+        dateformat = "HH:mm:ss z";
+        timeZone = TimeZone.getTimeZone("UTC");
     }
 
     public PlotOptions(){
@@ -25,6 +29,14 @@ public class PlotOptions {
 
     public String getDateformat() {
         return dateformat;
+    }
+
+    public TimeZone getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(TimeZone timeZone) {
+        this.timeZone = timeZone;
     }
 
     public void setDateformat(String dateformat) {
