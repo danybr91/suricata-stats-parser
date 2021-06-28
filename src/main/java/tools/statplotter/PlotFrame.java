@@ -25,6 +25,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.dnd.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -81,6 +84,49 @@ public class PlotFrame extends JFrame {
         windowContent.setLayout(new BorderLayout(0,0));
         //windowContent.setBackground(Color.WHITE);
         add(windowContent);
+        setDropTarget(new DropTarget(this, DnDConstants.ACTION_COPY_OR_MOVE, new DropTargetListener() {
+            @Override
+            public void dragEnter(DropTargetDragEvent dtde) {
+
+            }
+
+            @Override
+            public void dragOver(DropTargetDragEvent dtde) {
+
+            }
+
+            @Override
+            public void dropActionChanged(DropTargetDragEvent dtde) {
+
+            }
+
+            @Override
+            public void dragExit(DropTargetEvent dte) {
+
+            }
+
+            @Override
+            public void drop(DropTargetDropEvent dtde) {
+                Transferable transferable = dtde.getTransferable();
+                if (dtde.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
+                    dtde.acceptDrop(dtde.getDropAction());
+                    try {
+                        List transferData = (List) transferable.getTransferData(DataFlavor.javaFileListFlavor);
+                        if (transferData.size() == 1) {
+                            loadFromFile((File) transferData.get(0));
+                            dtde.dropComplete(true);
+                        }
+                        else{
+                            onError("Error. Solo se puede abrir un fichero.");
+                        }
+                    } catch (Exception ex) {
+                        onError(ex);
+                    }
+                } else {
+                    dtde.rejectDrop();
+                }
+            }
+        }, true, null));
 
         // Main Panel
         JPanel windowPanel;
@@ -556,13 +602,19 @@ public class PlotFrame extends JFrame {
     }
 
     void setStatusMessage(String message){
-        statusLabel.setText(message);
+        if (message.length() > 100) {
+            statusLabel.setText(message.substring(0, 100) + "...");
+        }
+        statusLabel.setToolTipText(message);
     }
 
     void setFileMessage(File file){
         if (file != null){
-            fileInfoLabel.setText("| Fichero: " + file.getName());
-            fileInfoLabel.setToolTipText(file.getAbsolutePath());
+            String filePath = file.getAbsolutePath();
+            if (filePath.length() > 200) {
+                fileInfoLabel.setText(file.getAbsolutePath().substring(200));
+            }
+            fileInfoLabel.setText(file.getAbsolutePath());
         }
         else{
             fileInfoLabel.setText("");
